@@ -1,0 +1,64 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    background-color: #803795;
+    height: 10vh;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo-container{
+    display:flex;
+    width: 20em;    
+    padding: 8px;
+}
+
+.logo-nav:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.logo-nav{
+    padding: 10px;
+    border-radius: 100px;
+}
+
+.logo-img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navbars */
+
+.navbar-right-container{
+    font-family: Outfit, sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+}
+
+.navbar{
+    padding: 2rem;
+}
+
+.navbar:hover{
+    cursor: pointer;
+}
+
+.navbar.open::after{
+    transform: rotate(180deg);
+}
+
+.navbar::after{
+    transition: transform 0.3s ease;
+    display: inline-block; /*::after gör elementet till display: inline vilket inte supportat transform*/
+    content: "  ▼";
+}
+
+
