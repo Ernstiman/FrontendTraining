@@ -11,6 +11,7 @@
     background-color: #803795;
     height: 10vh;
     justify-content: space-between;
+    position: relative;
 }
 
 /* Logo */
@@ -35,7 +36,7 @@
 
 /* Navbars */
 
-.navbar-right-container{
+.header-right-container{
     font-family: Outfit, sans-serif;
     color: white;
     font-size: 16px;
@@ -43,22 +44,66 @@
     display: flex;
 }
 
-.navbar{
+.navbar-container{
     padding: 2rem;
 }
 
-.navbar:hover{
+.navbar-container:hover{
     cursor: pointer;
 }
 
-.navbar.open::after{
+.navbar-container.open .text-block::after{
     transform: rotate(180deg);
 }
 
-.navbar::after{
+.navbar-container .text-block::after{
     transition: transform 0.3s ease;
     display: inline-block; /*::after gör elementet till display: inline vilket inte supportat transform*/
     content: "  ▼";
+}
+
+.dropdown-menu{
+    background-color: #482053;
+    position: absolute;
+    max-height: 0px;
+    top:101%;
+    left: 0;
+    width: 100vw;
+}
+
+.navbar-container:not(.open) .dropdown-menu{
+    animation: slide-up 0.4s ease forwards;
+}
+
+.navbar-container.open .dropdown-menu{
+    animation: slide-down 0.4s ease forwards;
+}
+
+@keyframes slide-down{
+    0%{
+        opacity: 0;
+        max-height: 0px;
+        transform: translateY(-10px);
+    }
+
+    100%{
+        opacity: 1;
+        max-height: 500px;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up{
+    0%{
+        opacity: 1;
+        max-height: 500px;
+        transform: translateY(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-10px);
+        max-height: 0px;
+    }
 }
 
 

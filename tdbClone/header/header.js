@@ -1,9 +1,9 @@
 
 
-const navbars = document.getElementsByClassName('navbar');
-for(let navbar of navbars){
-    navbar.addEventListener('click', () => {
-        navbar.classList.toggle("open");
+const textBlocks = document.getElementsByClassName('text-block');
+for(let block of textBlocks){
+    block.addEventListener('click', () => {
+        block.parentElement.classList.toggle("open");
         console.log("You clicked on a navbar! ");
     })
 }
