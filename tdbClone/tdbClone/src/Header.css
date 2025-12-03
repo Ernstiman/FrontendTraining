@@ -1,0 +1,154 @@
+
+.header{
+    display: flex;
+    align-items: center;
+    background-color: #803795;
+    height: 10vh;
+    justify-content: space-between;
+    position: relative;
+    font-family: Outfit, sans-serif;
+    border-bottom: 1px solid white;
+    z-index: 999;
+}
+
+.logo-container{
+    display:flex;
+    width: 20em;    
+    padding: 8px;
+}
+
+.logo-nav:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo-nav{
+    padding: 10px;
+    border-radius: 100px;
+}
+
+.header-right-container{
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+}
+
+.navbar-container{
+    padding: 2rem;
+}
+
+.navbar-container:hover{
+    cursor: pointer;
+}
+
+.navbar-container.open .text-block::after{
+    transform: rotate(180deg);
+}
+
+.navbar-container .text-block::after{
+    transition: transform 0.3s ease;
+    display: inline-block; /*::after gör elementet till display: inline vilket inte supportat transform*/
+    content: "  ▼";
+}
+
+.dropdown-menu{
+    background-color: #482053;
+    position: absolute;
+    max-height: 0px;
+    top:101%;
+    left: 0;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 40px;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.dropdown-menu-columns{
+    position:relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    grid-auto-rows: 40px;
+}
+
+.dropdown-menu-links{
+    position: relative;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px;
+    padding-left: 40px;
+    transition: background-color, 0.5s ease;
+}
+
+.dropdown-menu-links:hover{
+    background-color: #a667b8;
+    transition: background-color, 0.3s ease;
+}
+
+.dropdown-menu-links::before{
+    position:absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    content: "";
+    background-image: url("./img/bulletPoint.png");
+    width:1.5em;
+    height:1.5em;
+    background-size: cover;
+    transition: transform, 0.2s;
+    
+}
+
+.dropdown-menu-links:hover::before{
+    transform: translateY(-20px);
+}
+
+.navbar-container:not(.open) .dropdown-menu{
+    animation: slide-up 0.4s ease forwards;
+}
+
+.navbar-container.open .dropdown-menu{
+    animation: slide-down 0.4s ease forwards;
+}
+
+@keyframes slide-down{
+    0%{
+        opacity: 0;
+        max-height: 0px;
+        padding-top: 0px;
+    }
+
+    100%{
+        opacity: 1;
+        max-height: 100vh;
+        padding-top: 40px;
+    }
+}
+
+@keyframes slide-up{
+    0%{
+        opacity: 1;
+        max-height:100vh;
+        padding-top: 40px;
+    }
+    100%{
+        opacity: 0;
+        max-height: 0px;
+        display: none;
+        padding-top:0px;
+    }
+}
+
+@keyframes rotates{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@font-face{
+    font-family: "Daddyinspace";
+    src: url("./fonts/DaddyinspaceDEMO.otf") format("opentype")
+}
