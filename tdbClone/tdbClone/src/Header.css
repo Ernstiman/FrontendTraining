@@ -108,7 +108,7 @@
 .dropdown-menu-links:hover{
     background-color: #a667b8;
     transition: background-color, 0.3s ease;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 .dropdown-menu-links::before{

@@ -11,7 +11,13 @@ const NAVS = [{title: "Om mottagningen", columns: [
         {title: "Uppsala teknolog-och naturvetarkår", rows: ["Om UTN", "Ovveguide", "Spel"]},
         {title: "Nationer", rows: ["Nationer", "Ord som är bra att ha koll på"]},
         {title: "Andra mottagningar", rows: ["Om andra mottagningar"]}
-    ]}];
+    ]},
+{title: "Program och Schema", columns: [{
+    title: "Program", rows: ["BAS", "B-Byggteknik", "DV-DataVetenskap", "E-Elektronik", "ES-Energisystem"]},
+        {title: null, rows: ["F-Teknisk fysik", "I-Industriell ekonomi", "IT-Informationsteknologi", "K-Kemiteknik", "M-Maskin"]},
+        {title:null, rows: ["MT-Medicinteknik", "STS-System i teknik och samhälle", "Q-Teknisk fysik med materialvetenskap", "W-Miljö-och Vattenteknik", "X-Molekylär bioteknik"]}
+
+]}];
 
 export default function Header(){
 
