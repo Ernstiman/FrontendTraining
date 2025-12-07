@@ -1,5 +1,6 @@
 
 .header{
+    width: 100vw;
     display: flex;
     align-items: center;
     background-color: #803795;
@@ -28,16 +29,32 @@
 
 .header-right-container{
     color: white;
-    font-size: 16px;
+    /* font-size: 16px; */
     font-weight: 400;
     display: flex;
 }
 
 .navbar-container{
     padding: 2rem;
+
 }
 
-.navbar-container:hover{
+.dropdown-menu-container{
+    max-height: 0px;
+    position:fixed;
+    top: 10vh;
+    width: 100vw;
+    left: 0;
+    transition: max-height 0.3s linear;
+    overflow-y: hidden;
+}
+
+.navbar-container.open .dropdown-menu-container{
+    transition: max-height 0.3s linear;
+    max-height: 100%;
+}
+
+.text-block:hover{
     cursor: pointer;
 }
 
@@ -53,16 +70,18 @@
 
 .dropdown-menu{
     background-color: #482053;
-    position: absolute;
-    max-height: 0px;
-    top:101%;
-    left: 0;
-    width: 100vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 40px;
-    z-index: 10;
     overflow: hidden;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    display: grid;
+}
+
+.navbar-container.open .dropdown-menu{
+    transition: transform 0.3s ease;
+    transform: translateY(0);
 }
 
 .dropdown-menu-columns{
@@ -71,6 +90,10 @@
     grid-template-columns: 1fr;
     row-gap: 10px;
     grid-auto-rows: 40px;
+}
+
+.dropdown-header{
+    margin-top: -10px;
 }
 
 .dropdown-menu-links{
@@ -85,6 +108,7 @@
 .dropdown-menu-links:hover{
     background-color: #a667b8;
     transition: background-color, 0.3s ease;
+    cursor: pointer;
 }
 
 .dropdown-menu-links::before{
@@ -104,42 +128,6 @@
 
 .dropdown-menu-links:hover::before{
     transform: translateY(-20px);
-}
-
-.navbar-container:not(.open) .dropdown-menu{
-    animation: slide-up 0.4s ease forwards;
-}
-
-.navbar-container.open .dropdown-menu{
-    animation: slide-down 0.4s ease forwards;
-}
-
-@keyframes slide-down{
-    0%{
-        opacity: 0;
-        max-height: 0px;
-        padding-top: 0px;
-    }
-
-    100%{
-        opacity: 1;
-        max-height: 100vh;
-        padding-top: 40px;
-    }
-}
-
-@keyframes slide-up{
-    0%{
-        opacity: 1;
-        max-height:100vh;
-        padding-top: 40px;
-    }
-    100%{
-        opacity: 0;
-        max-height: 0px;
-        display: none;
-        padding-top:0px;
-    }
 }
 
 @keyframes rotates{

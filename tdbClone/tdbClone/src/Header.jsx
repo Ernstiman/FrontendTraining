@@ -1,12 +1,17 @@
 import { useEffect, useRef, useState } from "react";
-import "./header.css";
+import "./Header.css";
 import HeaderNavBar from "./HeaderNavBar";
 
 const NAVS = [{title: "Om mottagningen", columns: [
     {title: "Inför mottagningen", rows: ["Checklista inför mottagningen", "Uppropet"]},
     {title: "Om mottagningen", rows: ["Läs om mottagningen", "For international students", "Vi är mottagningen", "Spel"]},
     {title: "Kontakt", rows: ["Kontakt", "Har något hänt dig?"]}
-]}];
+]},
+    {title: "Student i Uppsala", columns: [
+        {title: "Uppsala teknolog-och naturvetarkår", rows: ["Om UTN", "Ovveguide", "Spel"]},
+        {title: "Nationer", rows: ["Nationer", "Ord som är bra att ha koll på"]},
+        {title: "Andra mottagningar", rows: ["Om andra mottagningar"]}
+    ]}];
 
 export default function Header(){
 
@@ -29,7 +34,7 @@ export default function Header(){
                     onClick = {() => setCurrentNavIndex((prev) => prev == i ? null : i)}
                     isOpen = {currentNavIndex === i}
                     ref = {(el) => navs[i] = el} // Sets the ref of the component in the navs array
-                ></HeaderNavBar>
+                />
             ))}
         </div>
     </header>
