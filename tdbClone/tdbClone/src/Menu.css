@@ -36,5 +36,52 @@
     font-size: 118px;
     text-align: center;
     z-index: 3;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.second-menu-slide{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+}
+
+.text-box-1{
+    height: 550px;
+    width: 1040px;
+    background-color: var(--dark-purple);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    border-color: var(--light-purple);
+    border-style: solid;
+    border-top: 0;
+    border-left: 0;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    color: white;
+    padding: 50px;
+}
+
+.text-box-1 > h2{
+    margin-bottom: 50px;
+}
+
+.text-box-1 > p{
+    font-size: 20px;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        top: 55%
+    }
+    to {
+        opacity: 1;
+    }
 }
 

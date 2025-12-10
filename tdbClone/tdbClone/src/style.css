@@ -6,11 +6,27 @@
 
 :root{
   font-size: 15px;
+  background-color: black;
+  --light-purple: #803795;
+  --dark-purple: #36163f
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Daddyinspace, sans-serif;
+}
+
+h1{
+  font-size: 118px;
+}
+
+h2{
+  font-size: 38px;
 }
 
 img{
     max-width: 100%;
     height: auto;
 }
+
 
 

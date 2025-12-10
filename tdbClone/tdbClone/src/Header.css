@@ -54,6 +54,10 @@
     max-height: 100%;
 }
 
+.text-block{
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+}
+
 .text-block:hover{
     cursor: pointer;
 }
@@ -93,6 +97,7 @@
 }
 
 .dropdown-header{
+    font-size: 20px;
     margin-top: -10px;
 }
 
