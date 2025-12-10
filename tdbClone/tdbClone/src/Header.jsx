@@ -24,12 +24,24 @@ export default function Header(){
     const [currentNavIndex, setCurrentNavIndex] = useState(null);
     const navs = useRef([]);    
 
+    useEffect(() => {
+        const onClick = (e) => {
+            if(!e.target.closest('.dropdown-menu-container') && !e.target.closest('.text-block')){
+                setCurrentNavIndex(null);
+            }
+        }
+
+        document.addEventListener("click", onClick);
+
+        return () => document.removeEventListener("click", onClick);
+    }, [])
+
     return(
         <header className="header">
         
         <div className="logo-container">
             <a className="logo-nav" href="https://recce.utn.se/">            
-                <img className="logo-img" src="../img/logo.png"/>
+                <img className="logo-img" src="./img/logo.png"/>
             </a>
         </div>
         <div className="header-right-container">

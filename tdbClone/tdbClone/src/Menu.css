@@ -1,0 +1,40 @@
+.menu-container{
+    position: relative;
+    display: inline-block;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.menu-background-img{
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.menu-background-img-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.259);
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.menu-img-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+    font-family: Daddyinspace, sans-serif;
+    font-weight: 400;
+    font-size: 118px;
+    text-align: center;
+    z-index: 3;
+}
+

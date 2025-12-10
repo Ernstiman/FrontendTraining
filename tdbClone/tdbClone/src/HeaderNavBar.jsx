@@ -2,6 +2,8 @@ import { useEffect } from "react"
 
 export default function HeaderNavBar({title, columns, onClick, isOpen}){
 
+    
+
     return(
         <div className={`navbar-container ${isOpen ? 'open' : ''}`}>
             <div onClick={(e) => onClick()}className="text-block">{title}</div>
