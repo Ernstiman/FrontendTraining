@@ -6,10 +6,17 @@
     background-color: #803795;
     height: 10vh;
     justify-content: space-between;
-    position: relative;
+    position: fixed;
     font-family: Outfit, sans-serif;
     border-bottom: 1px solid white;
     z-index: 999;
+    transition: transform 0.2s linear, height 0.2s linear;
+}
+
+.header.hide{
+    transform: translateY(-10vh);
+    height: 0vw;
+    transition: transform 1s linear, height 1s linear;
 }
 
 .logo-container{

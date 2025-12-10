@@ -22,6 +22,7 @@ const NAVS = [{title: "Om mottagningen", columns: [
 export default function Header(){
 
     const [currentNavIndex, setCurrentNavIndex] = useState(null);
+    const [showHeader, setShowHeader] = useState(true);
     const navs = useRef([]);    
 
     useEffect(() => {
@@ -36,8 +37,27 @@ export default function Header(){
         return () => document.removeEventListener("click", onClick);
     }, [])
 
+      useEffect(() => {
+        let prevScroll = null;
+
+        const handleScroll = () => {
+            if(prevScroll && window.scrollY < prevScroll){
+                setShowHeader(true);
+                console.log("show header");
+            }
+            else{
+                setShowHeader(false);
+                console.log("hide header");
+            }
+            prevScroll = window.scrollY;
+        }
+            window.addEventListener("scroll", handleScroll);
+
+          return () => window.removeEventListener("scroll", handleScroll);
+        }, [])
+
     return(
-        <header className="header">
+        <header className={`header ${!showHeader ? 'hide' : ''}`}>
         
         <div className="logo-container">
             <a className="logo-nav" href="https://recce.utn.se/">            
