@@ -38,12 +38,10 @@ export default function Header(){
     }, [])
 
       useEffect(() => {
-        let prevScroll = null;
-
+        let prevScroll = Infinity;
         const handleScroll = () => {
             if(prevScroll && window.scrollY < prevScroll){
                 setShowHeader(true);
-                console.log("show header");
             }
             else{
                 setShowHeader(false);

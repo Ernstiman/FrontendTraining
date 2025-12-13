@@ -66,6 +66,12 @@
     display: flex;
     color: white;
     padding: 50px;
+    opacity: 0;
+}
+
+.text-box-1.render{
+    opacity: 1;
+    animation: fadeIn 0.8s ease-in;
 }
 
 .text-box-1 > h2{
