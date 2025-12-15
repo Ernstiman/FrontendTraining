@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { Link } from "react-router-dom"
 
 export default function HeaderNavBar({title, columns, onClick, isOpen}){
 
@@ -13,7 +14,12 @@ export default function HeaderNavBar({title, columns, onClick, isOpen}){
                     <div key={i} className="dropdown-menu-columns">
                         <h2 className = "dropdown-header">{col.title}</h2>
                         {col.rows.map((item, j) => (
-                            <a className="dropdown-menu-links" key={j}>{item}</a>
+                            <div className="dropdown-menu-links">
+                                {item == "Fråga [Tæ:sk]"
+                                ? <Link to="/FrågaTaesk">{item}</Link>
+                                : <a key={j}>{item}</a>
+                                }
+                            </div>
                         ))}
                     </div>
                 ))}

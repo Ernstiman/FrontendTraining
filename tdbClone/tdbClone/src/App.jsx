@@ -3,14 +3,22 @@ import './App.css'
 import Menu from './Menu'
 import Header from './Header'
 import './Menu.css'
+import {Routes, Route, BrowserRouter } from 'react-router-dom';
+import FrågaTaesk from './FrågaTaesk'
 
 function App() {
 
 
   return (
     <>  
-    <Header></Header>
-    <Menu></Menu>
+    
+    <BrowserRouter>
+      <Header></Header>
+      <Routes>
+        <Route path='/' element={<Menu/>}/>
+        <Route path='/FrågaTaesk' element={<FrågaTaesk/>}/>
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }

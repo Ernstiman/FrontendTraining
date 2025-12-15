@@ -4,7 +4,7 @@ import HeaderNavBar from "./HeaderNavBar";
 
 const NAVS = [{title: "Om mottagningen", columns: [
     {title: "Inför mottagningen", rows: ["Checklista inför mottagningen", "Uppropet"]},
-    {title: "Om mottagningen", rows: ["Läs om mottagningen", "For international students", "Vi är mottagningen", "Spel"]},
+    {title: "Om mottagningen", rows: ["Läs om mottagningen", "For international students", "Vi är mottagningen", "Spel", "Fråga [Tæ:sk]"]},
     {title: "Kontakt", rows: ["Kontakt", "Har något hänt dig?"]}
 ]},
     {title: "Student i Uppsala", columns: [
@@ -45,7 +45,7 @@ export default function Header(){
             }
             else{
                 setShowHeader(false);
-                console.log("hide header");
+                setCurrentNavIndex(null);
             }
             prevScroll = window.scrollY;
         }
