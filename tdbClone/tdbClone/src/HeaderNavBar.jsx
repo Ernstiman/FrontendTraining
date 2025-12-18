@@ -12,11 +12,11 @@ export default function HeaderNavBar({title, columns, onClick, isOpen}){
             <div className="dropdown-menu">
                 {columns.map((col, i) => (
                     <div key={i} className="dropdown-menu-columns">
-                        <h2 className = "dropdown-header">{col.title}</h2>
+                        <h2 key ={i} className = "dropdown-header">{col.title}</h2>
                         {col.rows.map((item, j) => (
-                            <div className="dropdown-menu-links">
+                            <div key={j} className="dropdown-menu-links">
                                 {item == "Fråga [Tæ:sk]"
-                                ? <Link to="/FrågaTaesk">{item}</Link>
+                                ? <Link key={j} to="/FrågaTaesk">{item}</Link>
                                 : <a key={j}>{item}</a>
                                 }
                             </div>
