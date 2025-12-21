@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./Header.css";
 import HeaderNavBar from "./HeaderNavBar";
+import { Link } from "react-router-dom";
 
 const NAVS = [{title: "Om mottagningen", columns: [
     {title: "Inför mottagningen", rows: ["Checklista inför mottagningen", "Uppropet"]},
@@ -58,9 +59,9 @@ export default function Header(){
         <header className={`header ${!showHeader ? 'hide' : ''}`}>
         
         <div className="logo-container">
-            <a className="logo-nav" href="https://recce.utn.se/">            
+            <Link to="/" className="logo-nav" href="https://recce.utn.se/">            
                 <img className="logo-img" src="./img/logo.png"/>
-            </a>
+            </Link>
         </div>
         <div className="header-right-container">
             {NAVS.map((nav, i) => ( 

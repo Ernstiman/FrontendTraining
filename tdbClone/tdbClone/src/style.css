@@ -5,6 +5,7 @@
 }
 
 :root{
+  overflow-x: hidden;
   font-size: 15px;
   background-color: black;
   --light-purple: #803795;
