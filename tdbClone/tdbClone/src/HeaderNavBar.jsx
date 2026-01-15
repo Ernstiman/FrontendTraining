@@ -6,8 +6,8 @@ export default function HeaderNavBar({title, columns, onClick, isOpen}){
     
 
     return(
-        <div className={`navbar-container ${isOpen ? 'open' : ''}`}>
-            <div onClick={(e) => onClick()}className="text-block">{title}</div>
+        <div onClick={(e) => onClick()}className={`navbar-container ${isOpen ? 'open' : ''}`}>
+            <div className="text-block">{title}</div>
             <div className="dropdown-menu-container">
             <div className="dropdown-menu">
                 {columns.map((col, i) => (

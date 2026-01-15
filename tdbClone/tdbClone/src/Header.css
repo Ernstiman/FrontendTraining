@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     background-color: #803795;
-    height: 10vh;
+    height: 8vh;
     justify-content: space-between;
     position: fixed;
     font-family: Outfit, sans-serif;
@@ -43,13 +43,20 @@
 
 .navbar-container{
     padding: 2rem;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
 
+.navbar-container:hover{
+    border-bottom-style: solid;
+    border-bottom-color: var(--dark-purple);
+    cursor: pointer;
 }
 
 .dropdown-menu-container{
     max-height: 0px;
     position:fixed;
-    top: 10vh;
+    top: 8vh;
     width: 100vw;
     left: 0;
     transition: max-height 0.3s linear;

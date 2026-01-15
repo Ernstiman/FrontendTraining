@@ -28,7 +28,7 @@ export default function Header(){
 
     useEffect(() => {
         const onClick = (e) => {
-            if(!e.target.closest('.dropdown-menu-container') && !e.target.closest('.text-block')){
+            if(!e.target.closest('.dropdown-menu-container') && !e.target.closest('.navbar-container')){
                 setCurrentNavIndex(null);
             }
         }
