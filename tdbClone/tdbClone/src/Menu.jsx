@@ -4,12 +4,15 @@ import {useInView} from 'react-intersection-observer';
 import UseRenderAnimation from './hookComponents/UseRenderAnimation';
 import UseScrollAnimation from './hookComponents/UseScrollAnimation';
 import SnabbLänkar from './Snabblänkar';
+import UseImgSlider from './hookComponents/UseImgSlider';
 export default function Menu(){
 
+    const images = ["./img/bakgrunder/disco.JPG", "./img/bakgrunder/grupp.jpg", "./img/bakgrunder/program_och_schema.jpg"];
     return (
         <div className="menu-container">
             
-            <img src="./img/mainPage.jpg" className="menu-background-img" />
+            {/* <img src="./img/mainPage.jpg" className="menu-background-img" /> */}
+            <UseImgSlider images={images}/>
             <div className="menu-background-img-overlay"/>
             <h1 className="menu-img-text">Välkommen Till TDB-Mottagningen</h1>
             <div className="second-menu-slide">
@@ -37,6 +40,7 @@ export default function Menu(){
             </div>
 
             <div className='third-menu-slide'>
+                
                 <div className='title-container'>
                     <h1 className='title'>SNABBLÄNKAR</h1>
                 </div>

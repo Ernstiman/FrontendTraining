@@ -1,4 +1,5 @@
 import UseScrollAnimation from "./hookComponents/UseScrollAnimation"
+import UseRenderAnimation from "./hookComponents/UseRenderAnimation"
 
 
 const länkar = [[{title: "OM MOTTAGNINGEN", bgr: "./img/snabblänkar/om_mottagningen.jpg", cutout: "./img/gubbar/krims.png"},
@@ -16,6 +17,7 @@ export default function SnabbLänkar(){
             {länkar.map((row, i) => (
               <div className="snabblänkar-row">
                 {row.map((column, j) => (
+                     
                     <div className="snabblänk-cell">
                         <h2 className="snabblänk-cell-header">{column.title}</h2>
                         <img className="snabblänk-cell-bgr-img" src={column.bgr}/>
