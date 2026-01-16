@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import {useInView} from 'react-intersection-observer';
 import UseRenderAnimation from './hookComponents/UseRenderAnimation';
 import UseScrollAnimation from './hookComponents/UseScrollAnimation';
+import SnabbLänkar from './Snabblänkar';
 export default function Menu(){
 
     return (
@@ -33,6 +34,13 @@ export default function Menu(){
                     <img src="./img/generalen.png" className='rekå-cutout'/> 
                     <img src="./img/spänn.png" className='rekå-cutout spänn'></img>   
                 </UseScrollAnimation>
+            </div>
+
+            <div className='third-menu-slide'>
+                <div className='title-container'>
+                    <h1 className='title'>SNABBLÄNKAR</h1>
+                </div>
+                <SnabbLänkar/>
             </div>
         </div>
     )

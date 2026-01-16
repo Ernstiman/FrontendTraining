@@ -6,6 +6,7 @@
 .menu-container{
     position: relative;
     display: block;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
     
@@ -53,6 +54,7 @@
     height: 100%;
     position: relative;
     overflow-y: hidden;
+    display: block;
 }
 
 .text-box-1{
@@ -82,9 +84,10 @@
     height: var(--img-size);
     object-fit: contain;
     position: absolute;
-    top: calc(100vh - var(--img-size));
-    left: calc(100vw - var(--img-size));
+    top: calc(100% - var(--img-size));
+    left: calc(100% - var(--img-size));
     transition: height 0.3s,  top 0.3s,  left 0.3s, transform 0.1s;
+    z-index: 3;
 
 }
 
@@ -123,6 +126,79 @@
     
 }
 
+.third-menu-slide{
+    display: flex;
+    width: 100vw;
+    background-color: black;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title-container{
+    margin: 10%;
+    text-align: center;
+    border-bottom: solid;
+    border-bottom-color: var(--light-purple);
+    border-width: 1px;
+    width: 70%;
+    height: 200px;
+}
+
+.snabblänkar-grid-container{
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    row-gap: 40px;
+}
+
+.snabblänkar-row{
+    display: flex;
+    gap: 20px;
+}
+
+.snabblänk-cell{
+    height: 400px;
+    width: 400px; 
+    text-align: center;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 2px 2px var(--light-purple);
+    transition: height 0.3s, width 0.3s;
+    overflow: hidden;
+}
+
+.snabblänk-cell:hover{
+    height: 500px;
+    width: 500px;
+}
+
+.snabblänk-cell-bgr-img{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.snabblänk-cell-header{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.snabblänk-cutout{
+    --img-size: 300px;
+    top: calc(110% - var(--img-size));
+    left: -10%;
+}
+
+.rekå-cutout.snabblänk-cutout:hover{
+    --img-size: 300px;
+}
 
 
 @keyframes fadeIn {
