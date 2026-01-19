@@ -10,7 +10,6 @@ export default function Menu(){
     const images = ["./img/bakgrunder/disco.JPG", "./img/bakgrunder/grupp.jpg", "./img/bakgrunder/program_och_schema.jpg"];
     return (
         <div className="menu-container">
-            
             {/* <img src="./img/mainPage.jpg" className="menu-background-img" /> */}
             <UseImgSlider images={images}/>
             <div className="menu-background-img-overlay"/>

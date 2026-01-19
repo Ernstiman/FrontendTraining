@@ -5,13 +5,14 @@ import Header from './Header'
 import './Menu.css'
 import {Routes, Route, BrowserRouter } from 'react-router-dom';
 import FrågaTaesk from './FrågaTaesk'
+import ShaderMesh from './ShaderMesh'
 
 function App() {
 
 
   return (
     <>  
-    
+    <ShaderMesh></ShaderMesh>
     <BrowserRouter>
       <Header></Header>
       <Routes>
