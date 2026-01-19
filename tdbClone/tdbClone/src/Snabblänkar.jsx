@@ -8,7 +8,7 @@ const länkar = [[{title: "OM MOTTAGNINGEN", bgr: "./img/snabblänkar/om_mottagn
     [{title: "BILJETTER - ORBI", bgr: "./img/snabblänkar/biljett.jpg", cutout: "./img/gubbar/taesk.png"},
     {title: "VI ÄR MOTTAGNINGEN", bgr: "./img/snabblänkar/vi_är_mottagningen.jpg", cutout: "./img/gubbar/phi.png"},
     {title: "SPEL", bgr: "./img/snabblänkar/binär.png", cutout: "./img/gubbar/binär.png"}],
-    [{title: "KONTAKT", bgr: "./img/snabblänkar/kontakt.jpg", cutout: "./img/gubbar/trix.png"}]
+    // [{title: "KONTAKT", bgr: "./img/snabblänkar/kontakt.jpg", cutout: "./img/gubbar/trix.png"}]
 ]
 export default function SnabbLänkar(){
 

@@ -10,7 +10,9 @@ import './shaderMesh.css'
 
 // 1. Define your GLSL
 const MyShaderMaterial = shaderMaterial(
-  { uTime: 0, uColor: new THREE.Color('#ff4500') , uResolution: new THREE.Vector2(window.innerWidth, window.innerHeight)},
+  { uTime: 0, uColor: new THREE.Color('#ff4500') , iResolution: new THREE.Vector2(window.innerWidth, window.innerHeight),
+    uMouse: new THREE.Vector2(0.5, 0.5)
+  },
   // Vertex Shader
   vertexShader,
   // Fragment Shader
@@ -20,14 +22,20 @@ const MyShaderMaterial = shaderMaterial(
 // 2. Register the material so you can use it as a JSX tag
 extend({ MyShaderMaterial })
 
-function ShaderMesh() {
+function ShaderMesh({color = null}) {
   const meshRef = useRef()
-
+  
+  
   // 3. Animate the 'uTime' uniform
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.uTime = state.clock.elapsedTime
+      meshRef.current.uTime = state.clock.elapsedTime;
+      meshRef.current.uMouse.x = (state.pointer.x + 1) / 2;
+      meshRef.current.uMouse.y = (state.pointer.y + 1) / 2;
     }
+    
+
+
   })
 
   return (
@@ -41,7 +49,9 @@ function ShaderMesh() {
 export default function App() {
   return (
     <div className='shader-container'>
-      <Canvas camera={{ position: [0, 0, 5] }}>
+      <Canvas 
+    //   eventSource={document.getElementById('root')}
+      camera={{ position: [0, 0, 5] }}>
         <Center>
           <ShaderMesh />
         </Center>

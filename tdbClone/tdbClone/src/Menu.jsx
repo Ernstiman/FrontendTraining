@@ -11,9 +11,11 @@ export default function Menu(){
     return (
         <div className="menu-container">
             {/* <img src="./img/mainPage.jpg" className="menu-background-img" /> */}
+            <div className='first-page-container'>
             <UseImgSlider images={images}/>
             <div className="menu-background-img-overlay"/>
             <h1 className="menu-img-text">Välkommen Till TDB-Mottagningen</h1>
+        </div>
             <div className="second-menu-slide">
                 <div className="custom-shape-divider">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -44,6 +46,10 @@ export default function Menu(){
                     <h1 className='title'>SNABBLÄNKAR</h1>
                 </div>
                 <SnabbLänkar/>
+            </div>
+            <div className='footer-container'>
+                <img className="footer-img" src="./img/footer.svg" alt="" />
+                <p>TDB-mottagningen är ett evenemang av Uppsala teknolog- och naturvetarkår.</p>
             </div>
         </div>
     )
