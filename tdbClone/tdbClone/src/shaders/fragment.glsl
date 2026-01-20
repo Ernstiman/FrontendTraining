@@ -3,8 +3,7 @@ uniform float uTime;
 uniform vec3 iResolution;
 varying vec2 vUv;
 uniform vec2 uMouse;
-uniform vec3 uColor;
-
+uniform float pageType;
 
 vec3 mod289(vec3 x) {
   return x - floor(x * (1.0 / 289.0)) * 289.0;
@@ -155,13 +154,22 @@ void main()
     vec3 color1 = vec3(1.0, 0.0, 0.88);
     vec3 color2 = vec3(0.38, 0.0, 1.0);
     vec3 color3 = vec3(0.0, 1.0, 0.07);
-    if(cycle < 1.0) {
+    if(pageType == 1.){
+      activeColor = vec3(0.0, 1.0, 0.13);
+      
+    }
+    else{
+      lightPos.x = 0.8;
+      lightPos.y = 0.5;
+      if(cycle < 1.0) {
         activeColor = mix(color1, color2, cycle);
     } else if(cycle < 2.0) {
         activeColor = mix(color2, color1, cycle - 1.0);
     } else {
         activeColor = mix(color3, color1, cycle - 2.0);
     }
+    }
+ 
     vec3 lightColor = activeColor;
 
     // 3. Calculate intensities

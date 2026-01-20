@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import './App.css'
 import Menu from './Menu'
 import Header from './Header'
@@ -7,11 +7,14 @@ import {Routes, Route, BrowserRouter } from 'react-router-dom';
 import FrågaTaesk from './FrågaTaesk'
 import ShaderMesh from './ShaderMesh'
 
+export const MainContext = createContext();
 function App() {
 
+    const [pageType, setPageType] = useState(0);
 
   return (
     <>  
+    <MainContext.Provider value = {[pageType, setPageType]}>
     <ShaderMesh></ShaderMesh>
     <BrowserRouter>
       <Header></Header>
@@ -20,6 +23,7 @@ function App() {
         <Route path='/FrågaTaesk' element={<FrågaTaesk/>}/>
       </Routes>
     </BrowserRouter>
+    </MainContext.Provider>
     </>
   )
 }

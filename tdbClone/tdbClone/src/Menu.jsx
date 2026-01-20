@@ -1,13 +1,20 @@
 
-import { useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import {useInView} from 'react-intersection-observer';
 import UseRenderAnimation from './hookComponents/UseRenderAnimation';
 import UseScrollAnimation from './hookComponents/UseScrollAnimation';
 import SnabbLänkar from './Snabblänkar';
 import UseImgSlider from './hookComponents/UseImgSlider';
-export default function Menu(){
+import { MainContext } from './App';
 
+
+export default function Menu(){
+    const [pageType, setPageType] = useContext(MainContext);
     const images = ["./img/bakgrunder/disco.JPG", "./img/bakgrunder/grupp.jpg", "./img/bakgrunder/program_och_schema.jpg"];
+
+    useEffect(() => {
+        setPageType(0);
+    }, []);
     return (
         <div className="menu-container">
             {/* <img src="./img/mainPage.jpg" className="menu-background-img" /> */}

@@ -8,6 +8,12 @@ export default function UseTypeEffect({children, setWriting = null}){
     const delay = 50;
     const text = typeof children === 'string' ? children : String(children);
 
+
+    useEffect(() => {
+        setTextIndex(0);
+        setCurrentText("");
+    }, [text]);
+    
     useEffect(() => {
 
         if(textIndex < children.length){ 
